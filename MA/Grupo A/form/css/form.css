@@ -17,8 +17,8 @@ form {
 }
 
 h1 {
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-left: 30px;
     color: #28e461;
     text-shadow: 5px 5px 5px black;
 }
@@ -43,7 +43,7 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     font-weight: bold;
 }
 
-.enviar {
+.salvar {
     background-color: #66FFFF;
     height: 40px;
     width: 100px;
@@ -55,12 +55,6 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     color: black;
 }
 
-textarea {
-    width: 400px;
-    height: 120px;
-    line-height: 10px;
-    max-width: 320px;
-}
 
 form label {
     display: inline-block;
