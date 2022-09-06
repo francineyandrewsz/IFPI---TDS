@@ -9,24 +9,60 @@
     <title>Formulário</title>
 </head>
 <body>
-   <form name="meu_form">
+    
+    <form name="meu_form">
     <h1>Documento Grupo A</h1>
     <div>
     <label for="nome">Nome</label>
     <input type="text" id="nomeid" placeholder="Digite seu nome" required="required" name="nome"/>
     </div>
     <div>
-    <label for="fone">Fone</label>
-    <input type="tel" id="fone" placeholder="(xx)xx-xx-xx-xx" name="foneid"/>
+    <label for="codigo">Código</label>
+    <input type="number" id="codigoid" placeholder="Digite o código" name="codigo"/>
     </div>
     <div>
-    <label for="email">Email</label>
-    <input type="emailid" id="email" placeholder="seuemail@email.com" name="email"/>
+    <label for="quantidade">Quantidade</label>
+    <input type="number" id="qtdid" placeholder="Digite a quantidade" name="qtd"/>
     </div>
     <div>
-    <textarea placeholder="Deixe sua opinião"></textarea>
-    <input type="submit" class="enviar" onclick="Enviar();" value="Enviar"/>
+    <label for="valor">Valor Unitário</label>
+    <input type="number" id="qtdunitid" placeholder="Digite o valor unitário" name="valor"/>
     </div>
+    <div>
+    <label for="qdata">Data</label>
+    <input type="date" id="qdata" name="qdata">
+    </div>
+    <p>
+    <div>
+    <label for="vendas">TIPO DE OPERAÇÃO:</label><br/><br/>
+    <span>
+    <p>
+    <label for="qcompra">Compra</label>
+    <input type="radio" id="qcompra" name="compra">
+    </p>  
+    
+    <label for="qvenda">Venda</label>
+    <input type="radio" id="qvenda" name="vendas"><br/><br/>
+    </span>
+    </div>
+    </p>
+    <div>
+    <label for="corretagem">Corretagem</label>
+    <input type="number" id="correid" placeholder="Digite a corretagem" name="corre"/>
+    </div>
+    <div>
+    <label for="taxa">TAXA</label>
+    <input type="number" id="taxaid" placeholder="Digite a taxa" name="taxa"/>
+    </div>
+    <div>
+    <label for="valor_o">Valor da operação</label>
+    <input type="number" id="valoroid" placeholder="Digite o valor da operação" name="valor_o"/>
+    </div>
+    <div>
+    <input type="submit" class="salvar" onclick="Salvar();" value="SALVAR"/>
+    </div>
+    
+   
    </form>
 
     
