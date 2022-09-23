@@ -8,49 +8,91 @@ Crie um mecanismo para alimentar elementos da lista e pesquisar por um valor exi
 3)Listar todos os nome
 0) Sair do programa
 '''
-lista = []
-def cadastrar_nome():
-    q = int(input('Digite quantos nomes deseja cadastrar: '))
-    for c in range(q):
-        lista.append(str(input(f'Nome da {c}ª pessoa: ')).strip().upper())
-        
+def receber_quantidade_elementos():
+   global max_lista
+   while True:
+      try:
+         quantidade = int(input("\nDigite a quantidade de elementos da lista: "))
+         while quantidade <= 0:
+            quantidade = int(input("\nQuantidade deve ser maior que 0: "))
+         max_lista = quantidade
+         break
+      except:
+         print("\nQuantidade inválida. Digite novamente!")
+
+def gravar_nome():
+   if len(nomes) < max_lista:
+      nome = input("\nDigite o nome da pessoa: ")
+      nomes.append(nome)
+      print("\nInclusão com sucesso!")
+   else:
+      print("\nA lista já está cheia!!")
 
 def pesquisar_nome():
-    p = str(input('Digite um nome que procura: ')).strip().upper()
-    for i in lista:
-        if (i == p):
-            print(f'O nome {p} está na lista')
-        else:
-            print(f'O nome {p} não está na lista')
+   if len(nomes) != 0:
+      nome = input("\nDigite o nome a pesquisar: ")
+      if nomes.count(nome) > 0: 
+         print("\nO nome está na lista na posição %d." % nomes.index(nome))
+      else:
+         print("\nO nome não está na lista!")
+   else:
+      print("\nA lista está vazia!!")
 
+def listar_nomes():
+   if len(nomes) != 0:
+      print(nomes)
+   else:
+      print("\nA lista está vazia!!")
 def excluir_nome():
-    delete = str(input('Informe o nome que deseja remover da lista: ')).strip().upper()
-    for i in lista:
-        if (i == delete):
-            lista.remove(delete)
-            print('Nome excluído')
-        else:
-            print('Nome não está na lista')
-while True:
-    try:
-        menu = print('''====== MENU ======
-        [1] Cadastrar nome
-        [2] Pesquisar nome
-        [3] Listar todos os nome
-        [4] Excluir nome
-        [0] Sair do programa''')
-        opção = int(input('Digite sua opção: ')) 
-        if opção == 1:
-            cadastrar_nome()
-        elif opção == 2:
-            pesquisar_nome()
-        elif opção == 3:
-            print(f'Os nome da lista = {lista}')
-        elif opção == 4:
-            excluir_nome()
-        elif opção == 0:
+   if len(nomes) > 0:
+      nome = input("\nDigite o nome a excluir: ")
+      if nomes.count(nome) > 0:
+         del nomes[nomes.index(nome)]
+         print("\nO nome %s foi excluido com sucesso." % (nome))
+      else:
+         print("\nO nome não está na lista!")
+   else:
+      print("\nA lista está vazia!!")
+def alterar_nome():
+   if len(nomes) > 0:
+      nome = input("\nDigite o nome a alterar: ")
+      if nomes.count(nome) > 0:
+         print("\nNome anterior: %s." % (nome))
+         novo_nome = input("\nNome atual: ")
+         nomes[nomes.index(nome)] = novo_nome
+         print("\nAlteração realizada com sucesso")
+      else:
+         print("\nO nome não está na lista!")
+   else:
+      print("\nA lista está vazia!!")
+
+def menu():
+   while True:
+      print("\n=========== MENU ============")
+      print(" 1)Cadastrar nome")
+      print(" 2)Pesquisar nome")
+      print(" 3)Listar todos os nomes")
+      print(" 4)Excluir nome")
+      print(" 5)Alterar nome")
+      print(" 0)Sair do programa")
+      print("-----------------------------")
+      try:
+         opc = int(input("\nDigite sua opção: "))
+         if opc == 0:
             break
-    except:
-        print('Operação inválida! Tente novamente.')
-
-
+         elif opc == 1:
+            gravar_nome()
+         elif opc == 2:
+            pesquisar_nome()
+         elif opc == 3:
+            listar_nomes()
+         elif opc == 4:
+            excluir_nome()
+         elif opc == 5:
+            alterar_nome()
+      except:
+         print("Opção inválida. Digite novamente!")
+max_lista = 0
+nomes = []
+receber_quantidade_elementos()
+menu()
