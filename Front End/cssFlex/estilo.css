@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    flex-wrap: nowrap;
+}
+
+#container-geral{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    background-color: white;
+    height: 100vh;
+}
+
+header {
+    background-image: url('cidadeverdelogo.png');
+    height: 200px;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+
+nav{
+    background-color: #EFCA08;
+    height: 6vh;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+nav#social-links{
+    background-color: #F49F0A;
+    height: 0.5;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    background-color: #00A6A6;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+main section#left{
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+}
+
+main section#left h3{
+    flex: 2;
+    text-align: center;
+    font-size: 1.3rem;
+    padding-left: 60px;
+    padding-right: 60px;
+    background: yellow;
+    display: flex;
+    align-items: center;
+}
+
+main section#left div{
+    background-color: red;
+    flex: 7;
+}
+
+main section#right{
+    background-color: green;
+    flex: 5;
+}
+
