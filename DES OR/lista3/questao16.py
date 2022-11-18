@@ -1,7 +1,7 @@
 '''16. Faça uma função que leia um número não determinado de valores positivos
 e retorna a média aritmética dos mesmos.'''
 def calcular_media(lista):
-    if len(lista) == 0:
+    if len(lista) == 0: # testar se a lista é vazia
         return Exception
     soma = 0
     for i in range(len(lista)):
