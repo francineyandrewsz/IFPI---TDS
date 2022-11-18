@@ -6,17 +6,22 @@ def perfeito(n):
     if type(n) != int or n <= 0:
         return Exception
     soma=0
-    for val in range(1,n):
-        if n % val == 0:
-            soma += val
+    for i in range(1,n):
+        if n % i == 0:
+            soma += i
 
-    if soma==n:
+    if soma == n:
         return True
     else:
         return False
 
 assert perfeito(-1) == Exception
-assert perfeito(3.6) == Exception
-assert perfeito(345678) == Exception
-assert perfeito(234) == Exception
+assert perfeito(1.5) == Exception
+assert perfeito("A") == Exception
+assert perfeito(0) == Exception
+assert perfeito(1) == False
+assert perfeito(20) == False
+assert perfeito(5) == False
+assert perfeito(6) == True
+assert perfeito(496) == True
 print('Todos os testes OK!')
